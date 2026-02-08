@@ -1,0 +1,24 @@
+FROM golang:1.24.12-alpine
+
+WORKDIR /app
+
+# Install git and make (required for go install and makefile)
+RUN apk add --no-cache git make
+
+# Install air for hot reload (v1.61.1 is compatible)
+RUN go install github.com/air-verse/air@v1.61.1 && \
+    go install -tags 'postgres' github.com/golang-migrate/migrate/v4/cmd/migrate@latest
+
+WORKDIR /app
+
+# Copy shared modules
+COPY omnipos-pkg /app/omnipos-pkg
+COPY omnipos-proto /app/omnipos-proto
+
+WORKDIR /app/omnipos-store-service
+COPY omnipos-store-service/go.mod omnipos-store-service/go.sum ./
+RUN go mod download
+
+COPY omnipos-store-service/ .
+
+CMD ["air", "-c", ".air.toml"]
