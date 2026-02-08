@@ -11,7 +11,7 @@ import (
 
 	"github.com/fekuna/omnipos-pkg/database/postgres"
 	"github.com/fekuna/omnipos-pkg/logger"
-	storev1 "github.com/fekuna/omnipos-proto/proto/store/v1"
+	storev1 "github.com/fekuna/omnipos-proto/gen/go/omnipos/store/v1"
 	"github.com/fekuna/omnipos-store-service/config"
 	"github.com/fekuna/omnipos-store-service/internal/middleware"
 	"github.com/fekuna/omnipos-store-service/internal/store/handler"

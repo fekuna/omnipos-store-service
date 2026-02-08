@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/fekuna/omnipos-pkg/logger"
-	storev1 "github.com/fekuna/omnipos-proto/proto/store/v1"
+	storev1 "github.com/fekuna/omnipos-proto/gen/go/omnipos/store/v1"
 	"github.com/fekuna/omnipos-store-service/internal/model"
 	"github.com/fekuna/omnipos-store-service/internal/store/usecase"
 	"go.uber.org/zap"

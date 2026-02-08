@@ -3,7 +3,7 @@ module github.com/fekuna/omnipos-store-service
 go 1.24.12
 
 require (
-	github.com/fekuna/omnipos-pkg v0.0.0
+	github.com/fekuna/omnipos-pkg v0.0.0-00010101000000-000000000000
 	github.com/fekuna/omnipos-proto v0.0.0
 	github.com/jmoiron/sqlx v1.4.0
 	go.uber.org/zap v1.27.1
